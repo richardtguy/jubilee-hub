@@ -1,32 +1,23 @@
-Overall architecture:
-Hub: 
-Raspberry Pi running Apache web server.
-Details of registered sensors and readings stored in SQL database. 
-Flask web app implements API to add/delete sensors and add/get sensor readings
-Python script (watchdog.py) runs in the background logging when sensor values breach defined rules
-
-Sensors:
-ESP8266 wifi boards with Arduino IDE.  Temperature and humidity readings from DHT22 sensor.
-Connect to WLAN and send data to hub using HTTP API.
-Hub only accepts readings if sensor sends correct key as argument to URL.
-(Key and hub IP address are hardcoded.)
-
-URL: /api/v1.0/sensors/
-METHOD: GET
-DESCRIPTION: Returns list of all registered sensors in JSON format
-EXAMPLE RESPONSE:
+# API
+||Get list of registered sensors|
+|---|---|
+|URL:|`/api/v1.0/sensors/`|
+|Method:|`GET`|
+|Description:|Returns list of all registered sensors in JSON format|
+###Example response:
 {
   "sensors": [
     {
-      "id": 2, 
-      "interval": null, 
-      "last_reading": "Mon, 18 Apr 2016 18:34:40 GMT", 
-      "location": "somewhere", 
-      "serial": "124", 
+      "id": 2,
+      "interval": null,
+      "last_reading": "Mon, 18 Apr 2016 18:34:40 GMT",
+      "location": "somewhere",
+      "serial": "124",
       "type": "any"
     }
   ]
 }
+
 
 URL: /api/v1.0/sensors/<sensor_id>/readings
 METHOD: GET
