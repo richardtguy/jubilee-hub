@@ -1,4 +1,4 @@
-# API
+# API v1.0
 ||Get list of registered sensors|
 |---|---|
 |URL:|`/api/v1.0/sensors/`|
