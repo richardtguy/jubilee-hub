@@ -32,9 +32,9 @@ $ sudo virtualenv flask
 
 - Install Python packages
 ```bash
-	$ sudo flask/bin/pip install flask
-	$ sudo flask/bin/pip install Flask-SQLAlchemy
-	$ sudo flask/bin/pip install sqlalchemy-migrate
+$ sudo flask/bin/pip install flask
+$ sudo flask/bin/pip install Flask-SQLAlchemy
+$ sudo flask/bin/pip install sqlalchemy-migrate
 ```	
 
 - Check package install
@@ -60,14 +60,14 @@ $ flask/bin/python pip list
 	
 - Create database and migrate to latest structure
 ```bash
-  $ sudo ./db_create.py
-  $ sudo ./db_migrate.py
+$ sudo ./db_create.py
+$ sudo ./db_migrate.py
 ```
 
 - Create new user in group www-data (i.e. group of apache user)
 ```bash
-  $ sudo useradd flask
-  $ sudo -usermod G www-data flask
+$ sudo useradd flask
+$ sudo -usermod G www-data flask
 ```
 
 - Create wsgi script `jubilee-hub.wsgi`
@@ -107,15 +107,15 @@ from run import app as application
 
 - Enable virtual host and restart Apache
 ```bash
-  $ sudo a2ensite jubilee-hub.local
-  $ sudo service apache2 reload
-  $ sudo service apache2 restart
+$ sudo a2ensite jubilee-hub.local
+$ sudo service apache2 reload
+$ sudo service apache2 restart
 ```
 
 - Tweak permissions on app folders and restart
 ```bash
-	$ sudo chown -R flask:www-data jubilee-hub-prod
-	$ sudo chmod -R 750 jubilee-hub-prod
+$ sudo chown -R flask:www-data jubilee-hub-prod
+$ sudo chmod -R 750 jubilee-hub-prod
 ```
 
 - Run test script `api-test.sh` on localhost to test API
