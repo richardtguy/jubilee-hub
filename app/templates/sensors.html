@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- W3 CSS stylesheet -->
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<!-- Font Awesome icons -->
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+</head>
+
+<style>
+th {
+    text-align: left;
+}
+</style>
+
+<body onload="initialise(loggerIP, port)">
+<h1>Logger interface</h1>
+
+<br>
+<div class="w3-row">
+	<div class="w3-card-2 w3-container w3-blue-grey">
+		<table>
+			<tr>
+			<td>Serial number:</td><td><input type="text" class="w3-text-black" id="serial"></input></td>
+			<td>Type:</td><td><input type="text" class="w3-text-black" id="type"></input></td>
+			<td>Location:</td><td><input type="text" class="w3-text-black" id="location"></input></td>
+			<td><i class="w3-btn" onclick="addSensor(loggerIP, port)">Add</i></td>
+			</tr>
+		</table>
+	</div>
+	<div id="sensorTable" class="w3-card-2 w3-container w3-blue-grey"></div>
+	<div id="sensorReadings" class="w3-card-2 w3-container w3-blue-grey"></div>	
+</div>
+
+<script src="/static/js/logger.js"></script>
+
+</body>
+</html>
