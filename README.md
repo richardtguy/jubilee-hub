@@ -14,7 +14,7 @@ Instructions to deploy to Raspberry Pi running Apache server.
 
 - Create directory for application in `/var/www/`
 ```bash
-mkdir jubilee-hub-prod/
+$ mkdir /var/www/jubilee-hub-prod
 ```
 
 - Copy files from development version
@@ -120,14 +120,14 @@ $ sudo chmod -R 750 jubilee-hub-prod
 
 - Run test script `api-test.sh` on localhost to test API
 ```bash
-./api-test.sh --dev
+$ ./api-test.sh --dev
 ```
 
 - Add jubilee-hub.local to /etc/hosts file on client computer, pointing to the IP address of the Pi.  Use http://jubilee-hub.local in the client browser.  The server then directs the requests to the appropriate virtual server, based on the host name in the header of the request.
 
 - Run test script `api-test.sh` on client computer to test API
 ```bash
-./api-test.sh --prod
+$ ./api-test.sh --prod
 ```
 
 
